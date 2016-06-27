@@ -56,6 +56,6 @@ Generally when performing binding, it comes bundled with some huge framework tha
 
 # Why should I care/use it?
 
-In normal circumstances, when making a new application (be it mobile, desktop, or whatever other type that has components that needs to react to changes in other properties), you'd usually import some huge MVVM library, that takes usually takes care of UI navigation on the platform, as well as dependancy injection, and instantiating the VMs. All in all, a lot of (in my humble opinion) unnecessary hazzle.
+In normal circumstances, when making a new application (be it mobile, desktop, or whatever other type that has components that needs to react to changes in other properties), you'd usually import some huge MVVM library, that usually takes care of UI navigation on the platform, as well as dependancy injection, and instantiating the VMs. All in all, a lot of (in my humble opinion) unnecessary hazzle. At least if you want to decide yourself precisely what library you use for each individual aspect of your application.
 
-These assemblies will let you make bindings between your view and view model, without all that. 
+These assemblies will let you make bindings between your view and view model, without all that other stuff!
