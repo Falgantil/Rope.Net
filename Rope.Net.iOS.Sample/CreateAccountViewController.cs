@@ -106,8 +106,6 @@ namespace Rope.Net.iOS.Sample
 
     public class CreateAccountViewModel : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
         public bool ToS { get; set; }
 
         public string Username { get; set; }
@@ -119,6 +117,8 @@ namespace Rope.Net.iOS.Sample
         public string LastName { get; set; }
 
         public DateTime Birthday { get; set; } = DateTime.Now;
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
