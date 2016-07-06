@@ -1,12 +1,7 @@
-﻿using Rope.Net;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.ComponentModel;
-using System.Diagnostics;
-using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using System.Text;
 
 using Foundation;
 
@@ -18,6 +13,10 @@ namespace Rope.Net.iOS
 {
     public static class BindingIos
     {
+        /// <summary>
+        /// Invokes the specified action on the main thread.
+        /// </summary>
+        /// <param name="operation">The operation.</param>
         public static void Apply(Action operation)
         {
             if (NSThread.IsMain)
@@ -33,14 +32,15 @@ namespace Rope.Net.iOS
         public static IBinding BindText<TModel>(
             this UILabel view,
             TModel model,
-            Expression<Func<TModel, string>> getVal)
+            Expression<Func<TModel, string>> getVal,
+            string format = "{0}")
             where TModel : INotifyPropertyChanged
         {
             return BindingCore.CreateBinding(
                 view,
                 model,
                 getVal,
-                (v, value) => Apply(() => v.Text = value));
+                (v, value) => Apply(() => v.Text = string.Format(format, value)));
         }
 
         public static IBinding BindText<TModel>(
@@ -172,7 +172,7 @@ namespace Rope.Net.iOS
                         }
                     });
         }
-        
+
         public static IBinding BindText<TModel>(
             this StringElement view,
             TModel model,
@@ -255,11 +255,9 @@ namespace Rope.Net.iOS
 
             EventHandler viewOnValueChanged = (sender, args) =>
                 {
-                    var viewVal = view.Value;
-                    var currentVal = prop.GetValue(model);
-                    if (!Equals(viewVal, currentVal))
+                    if (!Equals(view.Value, prop.GetValue(model)))
                     {
-                        prop.SetValue(model, viewVal);
+                        prop.SetValue(model, view.Value);
                     }
                 };
             view.ValueChanged += viewOnValueChanged;

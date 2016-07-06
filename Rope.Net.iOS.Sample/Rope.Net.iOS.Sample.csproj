@@ -86,12 +86,12 @@
     <CodesignKey>iPhone Distribution</CodesignKey>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="CreateAccountViewController.cs" />
-    <Compile Include="Main.cs" />
-    <Compile Include="AppDelegate.cs" />
-    <Compile Include="RootViewController.cs" />
-    <Compile Include="SampleViewController.cs" />
-    <Compile Include="SampleViewController.designer.cs">
+    <Compile Include="Ui\ViewControllers\CreateAccountViewController.cs" />
+    <Compile Include="Initialization\Main.cs" />
+    <Compile Include="Initialization\AppDelegate.cs" />
+    <Compile Include="Ui\ViewControllers\RootViewController.cs" />
+    <Compile Include="Ui\ViewControllers\SampleViewController.cs" />
+    <Compile Include="Ui\ViewControllers\SampleViewController.designer.cs">
       <DependentUpon>SampleViewController.cs</DependentUpon>
     </Compile>
     <Content Include="FodyWeavers.xml" />
@@ -102,7 +102,7 @@
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
     <Content Include="Entitlements.plist" />
     <None Include="packages.config" />
-    <InterfaceDefinition Include="SampleViewController.xib" />
+    <InterfaceDefinition Include="Ui\ViewControllers\SampleViewController.xib" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoTouch.Dialog-1" />
@@ -121,6 +121,10 @@
       <Name>Rope.Net.iOS</Name>
       <IsAppExtension>false</IsAppExtension>
       <IsWatchApp>false</IsWatchApp>
+    </ProjectReference>
+    <ProjectReference Include="..\Rope.Net.Sample.Core\Rope.Net.Sample.Core.csproj">
+      <Project>{ee98310d-6fc5-4526-a439-198b47d030fa}</Project>
+      <Name>Rope.Net.Sample.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\Rope.Net\Rope.Net.csproj">
       <Project>{30972563-e69c-4e3d-9720-0d9e858c8939}</Project>

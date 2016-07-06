@@ -6,11 +6,11 @@ using CoreGraphics;
 
 using MonoTouch.Dialog;
 
-using Rope.Net.iOS.Sample.Annotations;
+using Rope.Net.iOS.Sample.Properties;
 
 using UIKit;
 
-namespace Rope.Net.iOS.Sample
+namespace Rope.Net.iOS.Sample.Ui.ViewControllers
 {
     public class CreateAccountViewController : DialogViewController
     {

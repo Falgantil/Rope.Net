@@ -5,12 +5,8 @@
 // Author: Bjarke Søgaard <sogaardbjarke@gmail.com>
 
 using System;
-using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq.Expressions;
-using System.Runtime.CompilerServices;
-
-using Rope.Net.Tests.Annotations;
 
 using Shouldly;
 

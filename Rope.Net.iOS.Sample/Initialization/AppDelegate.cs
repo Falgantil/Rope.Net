@@ -1,15 +1,10 @@
-﻿using System;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
+﻿using Foundation;
 
-using Foundation;
-
-using Rope.Net.iOS.Sample.Annotations;
+using Rope.Net.iOS.Sample.Ui.ViewControllers;
 
 using UIKit;
 
-namespace Rope.Net.iOS.Sample
+namespace Rope.Net.iOS.Sample.Initialization
 {
     // The UIApplicationDelegate for the application. This class is responsible for launching the
     // User Interface of the application, as well as listening (and optionally responding) to application events from iOS.
@@ -27,13 +22,13 @@ namespace Rope.Net.iOS.Sample
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
             // create a new window instance based on the screen size
-            Window = new UIWindow(UIScreen.MainScreen.Bounds);
+            this.Window = new UIWindow(UIScreen.MainScreen.Bounds);
 
             // If you have defined a root view controller, set it here:
-            Window.RootViewController = new UINavigationController(new RootViewController());
+            this.Window.RootViewController = new UINavigationController(new RootViewController());
 
             // make the window visible
-            Window.MakeKeyAndVisible();
+            this.Window.MakeKeyAndVisible();
 
             return true;
         }

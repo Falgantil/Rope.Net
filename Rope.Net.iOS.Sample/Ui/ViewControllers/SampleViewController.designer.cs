@@ -4,12 +4,12 @@
 // actions declared in your storyboard file.
 // Manual changes to this file will not be maintained.
 //
-using Foundation;
-using System;
-using System.CodeDom.Compiler;
-using UIKit;
 
-namespace Rope.Net.iOS.Sample
+using System.CodeDom.Compiler;
+
+using Foundation;
+
+namespace Rope.Net.iOS.Sample.Ui.ViewControllers
 {
     [Register ("SampleViewController")]
     partial class SampleViewController
@@ -32,24 +32,24 @@ namespace Rope.Net.iOS.Sample
 
         void ReleaseDesignerOutlets ()
         {
-            if (btnSubmit != null) {
-                btnSubmit.Dispose ();
-                btnSubmit = null;
+            if (this.btnSubmit != null) {
+                this.btnSubmit.Dispose ();
+                this.btnSubmit = null;
             }
 
-            if (lblResult != null) {
-                lblResult.Dispose ();
-                lblResult = null;
+            if (this.lblResult != null) {
+                this.lblResult.Dispose ();
+                this.lblResult = null;
             }
 
-            if (sliderMultiplier != null) {
-                sliderMultiplier.Dispose ();
-                sliderMultiplier = null;
+            if (this.sliderMultiplier != null) {
+                this.sliderMultiplier.Dispose ();
+                this.sliderMultiplier = null;
             }
 
-            if (sliderValue != null) {
-                sliderValue.Dispose ();
-                sliderValue = null;
+            if (this.sliderValue != null) {
+                this.sliderValue.Dispose ();
+                this.sliderValue = null;
             }
         }
     }

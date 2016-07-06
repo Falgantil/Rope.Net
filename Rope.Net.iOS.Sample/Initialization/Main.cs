@@ -1,6 +1,6 @@
 ﻿using UIKit;
 
-namespace Rope.Net.iOS.Sample
+namespace Rope.Net.iOS.Sample.Initialization
 {
     public class Application
     {

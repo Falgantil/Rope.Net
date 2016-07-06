@@ -2,7 +2,7 @@
 
 using UIKit;
 
-namespace Rope.Net.iOS.Sample
+namespace Rope.Net.iOS.Sample.Ui.ViewControllers
 {
     public class RootViewController : DialogViewController
     {

@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
-using Rope.Net.Tests.Annotations;
+using Rope.Net.Tests.Properties;
 
 namespace Rope.Net.Tests
 {
