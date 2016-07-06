@@ -55,7 +55,7 @@ namespace Rope.Net
             PropertyChangedEventHandler modelOnPropertyChanged = (sender, args) =>
                 {
                     TView target;
-                    if (!viewRef.TryGetTarget(out target))
+                    if (!viewRef.TryGetTarget(out target) || target == null)
                     {
                         // Ensures the PropertyChanged event unhooks.
                         bindingEvent.Dispose();
