@@ -11,6 +11,7 @@ using Android.OS;
 using Android.Text;
 using Android.Views;
 using Android.Widget;
+using Java.Lang;
 
 namespace Rope.Net.Android
 {
@@ -22,7 +23,7 @@ namespace Rope.Net.Android
         /// <param name="operation">The operation.</param>
         public static void Apply(Action operation)
         {
-            if (Looper.MainLooper.IsCurrentThread)
+			if (Looper.MainLooper.Thread == Thread.CurrentThread())
             {
                 operation();
             }
@@ -37,7 +38,7 @@ namespace Rope.Net.Android
             TModel model,
             Expression<Func<TModel, TValue>> getVal,
             Action<TView, TValue> setVal)
-            where TView : View
+            where TView : Java.Lang.Object
             where TModel : INotifyPropertyChanged
         {
             return BindingCore.CreateBinding(view, model, getVal, (v, val) => Apply(() => setVal(v, val)));
