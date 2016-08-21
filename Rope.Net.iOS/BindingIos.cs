@@ -56,15 +56,21 @@ namespace Rope.Net.iOS
                 (v, value) => Apply(() => v.Text = value));
             var prop = (PropertyInfo)((MemberExpression)getVal.Body).Member;
 
-            EventHandler viewOnValueChanged = (sender, args) =>
-                {
-                    if (!Equals(view.Text, prop.GetValue(model)))
+            var observer = NSNotificationCenter.DefaultCenter.AddObserver(
+                UITextField.TextFieldTextDidChangeNotification,
+                notification =>
                     {
-                        prop.SetValue(model, view.Text);
-                    }
-                };
-            view.ValueChanged += viewOnValueChanged;
-            return binding.With(() => view.ValueChanged -= viewOnValueChanged);
+                        if (notification.Object != view)
+                        {
+                            return;
+                        }
+                        if (!Equals(view.Text, prop.GetValue(model)))
+                        {
+                            prop.SetValue(model, view.Text);
+                        }
+                    });
+
+            return binding.With(() => NSNotificationCenter.DefaultCenter.RemoveObserver(observer));
         }
 
         public static IBinding BindEnable<TModel>(
