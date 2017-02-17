@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Rope.Net.iOS</id>
+    <version>1.0.0</version>
+    <authors>Falgantil</authors>
+    <owners>Falgantil</owners>
+    <projectUrl>https://github.com/Falgantil/Rope.Net</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>The iOS package for Rope.Net</description>
+    <releaseNotes>Initial release.</releaseNotes>
+    <copyright>Copyright Falgantil @ Github 2017</copyright>
+    <dependencies>
+      <dependency id="Rope.Net" version="1.0" />
+    </dependencies>
+  </metadata>
+</package>

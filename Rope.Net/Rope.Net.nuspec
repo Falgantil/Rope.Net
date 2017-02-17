@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Rope.Net</id>
+    <version>1.0.1</version>
+    <authors>Falgantil</authors>
+    <owners>Falgantil</owners>
+    <projectUrl>https://github.com/Falgantil/Rope.Net</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A minimal Binding library that assist in creating bindings between View and View Model</description>
+    <releaseNotes>Initial release.</releaseNotes>
+    <copyright>Copyright Falgantil @ Github 2017</copyright>
+    <dependencies>
+    </dependencies>
+  </metadata>
+</package>
